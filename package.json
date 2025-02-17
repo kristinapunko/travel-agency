@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kristina.github.io/kristinapunko",
+  "homepage": "https://github.io/kristinapunko/kristina.github.io.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
