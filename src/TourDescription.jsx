@@ -41,7 +41,7 @@ export default function TourDetails() {
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <img src={bali} alt="Tour image" className="w-full h-80 object-cover" />
+          <img src={bali} alt="Tour image" className="w-full h-64 md:h-80 object-cover" />
         </SwiperSlide>
       ))}
     </Swiper>
@@ -55,7 +55,7 @@ export default function TourDetails() {
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <img src={bali} alt="Thumbnail" className="w-full rounded-2xl h-24 object-cover cursor-pointer" />
+          <img src={bali} alt="Thumbnail" className="w-full rounded-2xl h-9/10 md:h-24 object-cover cursor-pointer" />
         </SwiperSlide>
       ))}
     </Swiper>

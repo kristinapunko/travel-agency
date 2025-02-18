@@ -1,10 +1,6 @@
 import React from "react";
 import img13 from './assets/13.jpg';
 
-
-
-
-
 import { useState } from "react";
 import img5 from './assets/5.jpg';
 import img6 from './assets/6.jpg';
@@ -48,7 +44,6 @@ const Destination = ({ name, image }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Фонове зображення */}
       <img
         src={image}
         alt={name}
@@ -60,15 +55,15 @@ const Destination = ({ name, image }) => {
         className={`absolute inset-0 bg-black bg-opacity-40 transition-all duration-300"
         }`}
       ></div>
-      {/* Текст при наведенні */}
+
       <div
   className={`absolute inset-0  flex flex-col items-center justify-center text-white text-lg font-semibold transition-opacity duration-300 ${
     isHovered ? "opacity-100" : "opacity-0"
   }`}
 >
-  <div>{name}</div>
-  <p className="text-gray-300 text-sm">з Києва, з Кишинева, з Львова</p>
-  <p className="text-sm text-gray-200 mt-2">о. Крит • Іракліон • о. Родос</p>
+  <div className="text-sm lg:text-md uppercase">{name}</div>
+  <p className="text-gray-300 text-[10px] lg:text-sm">з Києва, з Кишинева, з Львова</p>
+  <p className="text-[10px] lg:text-sm text-gray-200 lg:mt-2">о. Крит • Іракліон • о. Родос</p>
 </div>
 
     </div>
