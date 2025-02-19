@@ -21,12 +21,10 @@ function Header() {
       <>
   <header className="sticky top-0 left-0 w-full bg-white shadow-md z-50">
     <nav className="flex justify-between items-center w-[92%] mx-auto">
-      {/* Логотип */}
       <div>
         <a href="#" className=""><img className="w-[120px] md:w-[160px]" src={logo} alt="" /></a>
       </div>
 
-      {/* Меню */}
       <div 
         className={`nav-links absolute bg-white w-full left-0 transition-all duration-300 ease-in-out ${
           isOpen ? "top-[100%] opacity-100" : "top-[-100%] opacity-0"
@@ -49,7 +47,6 @@ function Header() {
         </ul>
       </div>
 
-      {/* Кнопки та бургер-меню */}
       <div className="flex items-center gap-6">
         <Link className="bg-[#f1e8e6] text-sm text-[#543c52] px-4 py-2 rounded-full hover:bg-[#edd2cb]" to="/login">
           Log in
@@ -57,7 +54,6 @@ function Header() {
         <Link className="bg-[#543c52] text-sm text-[#f1e8e6] px-4 py-2 rounded-full hover:bg-[#361d32]" to="/register">
           Sign up
         </Link>
-        {/* Бургер-іконка */}
         <ion-icon 
           name={isOpen ? "close" : "menu"} 
           onClick={() => setIsOpen(!isOpen)}  
