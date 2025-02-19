@@ -27,7 +27,7 @@ function Header() {
 
       <div 
         className={`nav-links absolute bg-white w-full left-0 transition-all duration-300 ease-in-out ${
-          isOpen ? "top-[100%] opacity-100" : "top-[-100%] opacity-0"
+          isOpen ? "top-[100%] opacity-100" : "top-[-150%] opacity-0"
         } lg:static lg:w-auto lg:flex lg:items-center lg:opacity-100 lg:top-0 lg:min-h-fit min-h-[60vh] px-5`}
       >
         <ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8">
@@ -45,13 +45,22 @@ function Header() {
             <Tabs isOpen={isOpen} className="relative text-sm xl:text-base inline-block text-[#543c52]" />
           </li>
         </ul>
-      </div>
-
-      <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 lg:hidden block">
         <Link className="bg-[#f1e8e6] text-sm text-[#543c52] px-4 py-2 rounded-full hover:bg-[#edd2cb]" to="/login">
           Log in
         </Link>
         <Link className="bg-[#543c52] text-sm text-[#f1e8e6] px-4 py-2 rounded-full hover:bg-[#361d32]" to="/register">
+          Sign up
+        </Link>
+        </div>
+      </div>
+    
+
+      <div className="flex items-center gap-6">
+        <Link className="bg-[#f1e8e6] text-sm text-[#543c52] px-4 py-2 rounded-full hover:bg-[#edd2cb] lg:block hidden" to="/login">
+          Log in
+        </Link>
+        <Link className="bg-[#543c52] text-sm text-[#f1e8e6] px-4 py-2 rounded-full hover:bg-[#361d32] lg:block hidden" to="/register">
           Sign up
         </Link>
         <ion-icon 
@@ -319,8 +328,7 @@ const Tabs = ({ isOpen }) => {
    
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
     
-    
-    {/* Фільтр за ціною (повзунок) */}
+  
     <div>
       <label className="block text-sm text-[#543c52] font-medium">
         Ціна:
@@ -334,7 +342,6 @@ const Tabs = ({ isOpen }) => {
       />
     </div>
 
-    {/* Фільтр за типом транспорту */}
     <div>
       <label className="block text-sm text-[#543c52] font-medium">
         Тип проїзду:
@@ -351,7 +358,6 @@ const Tabs = ({ isOpen }) => {
       </div>
     </div>
 
-    {/* Фільтр за класом готелю */}
     <div>
       <label className="block text-sm text-[#543c52] font-medium">
         Клас готелю:
@@ -380,7 +386,6 @@ const Tabs = ({ isOpen }) => {
       </div>
     </div>
 
-    {/* Фільтр за типом харчування */}
     <div>
       <label className="block text-sm text-[#543c52] font-medium">
         Тип харчування:

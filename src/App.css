@@ -79,25 +79,54 @@ ion-icon {
 }
 
 /* Приховує стандартне око в Chrome/Safari */
-/* input::-webkit-credentials-auto-fill-button {
+input::-webkit-credentials-auto-fill-button {
   display: none !important;
 }
 
 /* Приховує око та кнопку очищення в Edge */
-/* input::-ms-reveal,
+input::-ms-reveal,
 input::-ms-clear {
   display: none;
 }
 
+/* Запобігає автозаповненню пароля (іконка 🔒) */
 input {
   background-color: transparent !important;
   -webkit-text-fill-color: white !important;
   transition: background-color 5000s ease-in-out 0s;
 }
- */ */
 
+.custom-datepicker {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px; /* Відстань між місяцями */
+}
+.react-datepicker__header{
+  background-color: rgba(54, 29, 50, 0.5) !important;
+  color: #f1e8e6 !important;
+}
+.react-datepicker {
+  background: white !important;
+}
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range {
+  background-color: #361d32 !important;
+  opacity: 50%;
+  color: #f1e8e6 !important;
+}
+.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+  color: #543c52;
+}
+/* .react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected {
+  background-color: rgb(186.25, 217.0833333333, 241.25);
+  color: #f55951;
+} */
+input {
+  font-weight: bold;
+  -webkit-text-fill-color: #543c52 !important;
+  transition: background-color 5000sease-in-out 0s;
+}
 
-
-
-
-
+.react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected {
+  background-color: #edd2cb !important;
+  color: #f55951 !important;
+}
