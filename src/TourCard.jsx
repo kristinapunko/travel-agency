@@ -1,6 +1,7 @@
 import { FaHeart, FaCalendarAlt, FaPlaneDeparture, FaUtensils,FaFireAlt } from "react-icons/fa";
 import img13 from './assets/13.jpg';
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const tours = [
   { id: 1, title: "Kendwa Rocks 3 ★", location: "Танзанія, Занзібар", rating: "4,3", reviews: 36, price: "140 420 грн" },
@@ -8,7 +9,10 @@ const tours = [
   { id: 3, title: "Royal Zanzibar Beach Resort", location: "Танзанія, Занзібар", rating: "4,7", reviews: 50, price: "160 700 грн" },
   { id: 4, title: "Kendwa Rocks 3 ★", location: "Танзанія, Занзібар", rating: "4,3", reviews: 36, price: "140 420 грн" },
   { id: 5, title: "Zanzibar Queen Hotel", location: "Танзанія, Занзібар", rating: "4,5", reviews: 42, price: "150 500 грн" },
-  { id: 6, title: "Royal Zanzibar Beach Resort", location: "Танзанія, Занзібар", rating: "4,7", reviews: 50, price: "160 700 грн" }
+  { id: 6, title: "Royal Zanzibar Beach Resort", location: "Танзанія, Занзібар", rating: "4,7", reviews: 50, price: "160 700 грн" },
+  { id: 7, title: "Kendwa Rocks 3 ★", location: "Танзанія, Занзібар", rating: "4,3", reviews: 36, price: "140 420 грн" },
+  { id: 8, title: "Zanzibar Queen Hotel", location: "Танзанія, Занзібар", rating: "4,5", reviews: 42, price: "150 500 грн" },
+  { id: 9, title: "Royal Zanzibar Beach Resort", location: "Танзанія, Занзібар", rating: "4,7", reviews: 50, price: "160 700 грн" }
 ];
 
 const TourCard = ({ tour }) => {
@@ -62,11 +66,12 @@ const TourCard = ({ tour }) => {
 };
 
 const TourList = () => {
+  const [more, setMore] = useState(false)
   return (
     <>
     <div className="container mx-auto px-4 py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {tours.map((tour) => (
+        {(more ? tours : tours.slice(0, 6)).map((tour) => (
           <TourCard key={tour.id} tour={tour} />
         ))}
       </div>
@@ -75,8 +80,9 @@ const TourList = () => {
         <button 
           type="button" 
           className="text-sm text-[#361d32] underline" 
-        >
-          Більше
+          onClick={() => setMore(!more)}
+          >
+           {more ? "Менше" : "Більше"}
         </button>
       </div>
       </>

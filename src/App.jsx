@@ -15,6 +15,7 @@ import { Route, Routes, Router } from 'react-router-dom'
 import TourDescription from './TourDescription'
 import Application from './Application'
 import TourL from './ThematicTours'
+import AllTours from './AllTours'
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,9 @@ function App() {
       <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
       <Route path="/register" element={<AuthLayout><Register /></AuthLayout>} />
       <Route path='/tour' element={<TourDescription/>}/>
+      <Route path='alltours/tour' element={<TourDescription/>}/>
       <Route path="/application" element={<AuthLayout><Application /></AuthLayout>} />
+      <Route path='/alltours' element={<AllTours/>}/>
     </Routes>
           {/* <Header/>
           <Slides className='-z-10'/>

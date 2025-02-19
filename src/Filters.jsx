@@ -24,7 +24,7 @@ const Filters = () => {
         <input
           type="text"
           placeholder="Пошук..."
-          className="w-full text-[#543c52] px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#543c52]"
+          className="w-full text-[#543c52] px-4 py-2 rounded-full ring-2 ring-white focus:outline-none focus:ring-2 focus:ring-[#543c52]"
         />
         <button className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#361d32] text-white p-2 rounded-full hover:bg-[#543c52] transition">
           <img src={arrowIcon} alt="Search" className="w-6 h-4" />

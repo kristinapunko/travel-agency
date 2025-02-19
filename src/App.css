@@ -78,6 +78,25 @@ ion-icon {
   background-color: white !important;
 }
 
+/* Приховує стандартне око в Chrome/Safari */
+input::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+
+/* Приховує око та кнопку очищення в Edge */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Запобігає автозаповненню пароля (іконка 🔒) */
+input {
+  background-color: transparent !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
 
 
 

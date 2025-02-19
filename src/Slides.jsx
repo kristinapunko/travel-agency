@@ -79,7 +79,7 @@ const Slides = () => {
         <div className="relative">
           <img className="w-full h-[50vh] object-cover" src={paris} alt="Paris" />
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center text-white text-3xl font-bold">
-            Париж — місто кохання
+          Париж — місто вогнів і мистецтва
           </div>
         </div>
       </SwiperSlide>

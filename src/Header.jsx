@@ -18,52 +18,56 @@ function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <>
-          <header className='bg-white'>
-            <nav className='flex justify-between items-center w-[92%] mx-auto'>
-              <div>
-                <a href="#" className=''><img className='w-[120px] md:w-[160px]' src={logo} alt="" /></a>
-              </div>
-              <div className={`nav-links lg:static absolute bg-white lg:min-h-fit min-h-[60vh] left-0 ${
-            isOpen ? "top-[9%] z-20" : "top-[-120%]"
-          } lg:w-auto w-full flex items-center px-5 transition-all duration-300 ease-in-out`}>
-              <ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8">
-                <li>
-                  <Link 
-                    to="/" 
-                    className="relative text-sm xl:text-base inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full"
-                  >
-                    Головна
-                  </Link>
-                </li>
-                <li>
-                  <a 
-                    href="#" 
-                    className="relative text-sm xl:text-base inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full"
-                  >
-                    Пошук
-                  </a>
-                </li>
-                <li>
-                <Tabs
-                    isOpen={isOpen}
-                    className=" relative text-sm xl:text-base inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full" />
-                </li>
-                </ul>
-              </div>
-              <div className='flex items-center gap-6'>
-              <Link className='bg-[#f1e8e6] text-[10px]  text-sm xl:text-base text-[#543c52] md:px-5 px-2 py-2 rounded-full hover:bg-[#edd2cb]' to='/login'>Log in</Link>
-                <Link className='bg-[#543c52] text-[10px]  text-sm xl:text-base text-[#f1e8e6] md:px-5 px-2 py-2 rounded-full hover:bg-[#361d32]' to='/register'>Sing up</Link>
-                <ion-icon 
-                    name={isOpen ? "close" : "menu"}
-                    onClick={() => setIsOpen(!isOpen)}  
-                    className=" lg:hidden text-3xl cursor-pointer"
-                    ></ion-icon>
+      <>
+  <header className="sticky top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav className="flex justify-between items-center w-[92%] mx-auto">
+      {/* Логотип */}
+      <div>
+        <a href="#" className=""><img className="w-[120px] md:w-[160px]" src={logo} alt="" /></a>
+      </div>
 
-              </div>
-            </nav>
-          </header>
-        </>
+      {/* Меню */}
+      <div 
+        className={`nav-links absolute bg-white w-full left-0 transition-all duration-300 ease-in-out ${
+          isOpen ? "top-[100%] opacity-100" : "top-[-100%] opacity-0"
+        } lg:static lg:w-auto lg:flex lg:items-center lg:opacity-100 lg:top-0 lg:min-h-fit min-h-[60vh] px-5`}
+      >
+        <ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8">
+          <li>
+            <Link to="/" className=" text-sm xl:text-base relative inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full">
+              Головна
+            </Link>
+          </li>
+          <li>
+            <Link to='/alltours' className=" text-sm xl:text-base relative inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full">
+              Пошук
+            </Link>
+          </li>
+          <li>
+            <Tabs isOpen={isOpen} className="relative text-sm xl:text-base inline-block text-[#543c52]" />
+          </li>
+        </ul>
+      </div>
+
+      {/* Кнопки та бургер-меню */}
+      <div className="flex items-center gap-6">
+        <Link className="bg-[#f1e8e6] text-sm text-[#543c52] px-4 py-2 rounded-full hover:bg-[#edd2cb]" to="/login">
+          Log in
+        </Link>
+        <Link className="bg-[#543c52] text-sm text-[#f1e8e6] px-4 py-2 rounded-full hover:bg-[#361d32]" to="/register">
+          Sign up
+        </Link>
+        {/* Бургер-іконка */}
+        <ion-icon 
+          name={isOpen ? "close" : "menu"} 
+          onClick={() => setIsOpen(!isOpen)}  
+          className="lg:hidden text-3xl cursor-pointer"
+        ></ion-icon>
+      </div>
+    </nav>
+  </header>
+</>
+
     )
 }
 
