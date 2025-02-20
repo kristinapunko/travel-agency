@@ -96,11 +96,19 @@ input {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.custom-datepicker {
+/* .custom-datepicker {
   display: flex !important;
   flex-direction: row !important;
   gap: 10px; /* Відстань між місяцями */
+
+@media (min-width: 768px){
+  .custom-datepicker {
+    display: flex !important;
+    flex-direction: row !important;
+    
+  }
 }
+
 .react-datepicker__header{
   background-color: rgba(54, 29, 50, 0.5) !important;
   color: #f1e8e6 !important;
@@ -121,9 +129,8 @@ input {
   color: #f55951;
 } */
 input {
-  font-weight: bold;
+  font-weight: bold !important;
   -webkit-text-fill-color: #543c52 !important;
-  transition: background-color 5000sease-in-out 0s;
 }
 
 .react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected {

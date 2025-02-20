@@ -16,6 +16,7 @@
     "@tailwindcss/vite": "^4.0.3",
     "@wojtekmaj/react-daterange-picker": "^6.0.0",
     "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.0.11",
     "motion": "^12.0.11",
     "react": "^18.3.1",

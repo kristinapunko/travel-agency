@@ -22,22 +22,22 @@ function Header() {
   <header className="sticky top-0 left-0 w-full bg-white shadow-md z-50">
     <nav className="flex justify-between items-center w-[92%] mx-auto">
       <div>
-        <a href="#" className=""><img className="w-[120px] md:w-[160px]" src={logo} alt="" /></a>
+        <a href="#" className=""><img className="w-[140px] md:w-[160px]" src={logo} alt="" /></a>
       </div>
 
       <div 
         className={`nav-links absolute bg-white w-full left-0 transition-all duration-300 ease-in-out ${
-          isOpen ? "top-[100%] opacity-100" : "top-[-150%] opacity-0"
-        } lg:static lg:w-auto lg:flex lg:items-center lg:opacity-100 lg:top-0 lg:min-h-fit min-h-[60vh] px-5`}
+          isOpen ? "top-[100%] opacity-100" : "top-[-1000%] opacity-0"
+        } lg:static lg:w-auto lg:flex lg:items-center lg:opacity-100 lg:top-0 lg:min-h-fit px-5`}
       >
-        <ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8">
+        <ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-5 lg:gap-8">
           <li>
-            <Link to="/" className=" text-sm xl:text-base relative inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full">
+            <Link to="/" className=" text-md xl:text-base relative inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full">
               Головна
             </Link>
           </li>
           <li>
-            <Link to='/alltours' className=" text-sm xl:text-base relative inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full">
+            <Link to='/alltours' className=" text-md xl:text-base relative inline-block text-[#543c52] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#543c52] after:transition-all after:duration-300 hover:after:w-full">
               Пошук
             </Link>
           </li>
@@ -45,7 +45,7 @@ function Header() {
             <Tabs isOpen={isOpen} className="relative text-sm xl:text-base inline-block text-[#543c52]" />
           </li>
         </ul>
-        <div className="flex items-center gap-6 lg:hidden block">
+        <div className="flex items-center gap-6 lg:hidden block mb-8">
         <Link className="bg-[#f1e8e6] text-sm text-[#543c52] px-4 py-2 rounded-full hover:bg-[#edd2cb]" to="/login">
           Log in
         </Link>
@@ -64,9 +64,10 @@ function Header() {
           Sign up
         </Link>
         <ion-icon 
-          name={isOpen ? "close" : "menu"} 
+          name={isOpen ? "close" : "menu-outline"} 
           onClick={() => setIsOpen(!isOpen)}  
-          className="lg:hidden text-3xl cursor-pointer"
+          className="lg:hidden w-64 cursor-pointer"
+          style={{ fontSize: '1.8rem' , color: "#543c52"}}
         ></ion-icon>
       </div>
     </nav>
@@ -272,40 +273,41 @@ const Tabs = ({ isOpen }) => {
   
     return (
 <div>
-      <div className={isMobile ? "flex flex-col gap-4" : "flex gap-4"}>
-        <div>
-          <h3 className="mb-2 text-sm text-[#361d32] font-medium">По Україні</h3>
-          <a href="#" className="block text-sm text-[#543c52]">Київ</a>
-          <a href="#" className="block text-sm text-[#543c52]">Одеса</a>
-          <a href="#" className="block text-sm text-[#543c52]">Львів</a>
-          <a href="#" className="block text-sm text-[#543c52]">Харків</a>
-          <a href="#" className="block text-sm text-[#543c52]">Дніпро</a>
-          <a href="#" className="block text-sm text-[#543c52]">Чернівці</a>
-          <a href="#" className="block text-sm text-[#543c52]">Івано-Франківськ</a>
-          <a href="#" className="block text-sm text-[#543c52]">Ужгород</a>
-        </div>
-        <div>
-          <h3 className="mb-2 text-sm text-[#361d32] font-medium">Європа</h3>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Варшава</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Кишинів</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Прага</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Берлін</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Рим</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Барселона</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Париж</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Амстердам</a>
-        </div>
-        <div>
-          <h3 className="mb-2 text-sm text-[#361d32] font-medium">Світ</h3>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Нью-Йорк</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Токіо</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Бангкок</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Сідней</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Ріо-де-Жанейро</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Дубай</a>
-          <a href="#" className="mb-1 block text-sm text-[#543c52]">Кейптаун</a>
-        </div>
-      </div>
+<div className={`flex gap-4 ${isMobile ? "flex-col overflow-y-auto max-h-60" : ""}`}>
+  <div>
+    <h3 className="mb-2 text-sm text-[#361d32] font-medium">По Україні</h3>
+    <a href="#" className="block text-sm text-[#543c52]">Київ</a>
+    <a href="#" className="block text-sm text-[#543c52]">Одеса</a>
+    <a href="#" className="block text-sm text-[#543c52]">Львів</a>
+    <a href="#" className="block text-sm text-[#543c52]">Харків</a>
+    <a href="#" className="block text-sm text-[#543c52]">Дніпро</a>
+    <a href="#" className="block text-sm text-[#543c52]">Чернівці</a>
+    <a href="#" className="block text-sm text-[#543c52]">Івано-Франківськ</a>
+    <a href="#" className="block text-sm text-[#543c52]">Ужгород</a>
+  </div>
+  <div>
+    <h3 className="mb-2 text-sm text-[#361d32] font-medium">Європа</h3>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Варшава</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Кишинів</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Прага</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Берлін</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Рим</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Барселона</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Париж</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Амстердам</a>
+  </div>
+  <div>
+    <h3 className="mb-6 text-sm text-[#361d32] font-medium">Світ</h3>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Нью-Йорк</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Токіо</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Бангкок</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Сідней</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Ріо-де-Жанейро</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Дубай</a>
+    <a href="#" className="mb-1 block text-sm text-[#543c52]">Кейптаун</a>
+  </div>
+</div>
+
   
         <button className="ml-auto mt-4 flex items-center gap-1 text-sm text-[#f55951]">
           <span>Усі гарячі тури</span>
@@ -325,7 +327,7 @@ const Tabs = ({ isOpen }) => {
   }, []);
   
     return (
-   
+  <div className={`flex gap-4 ${isMobile ? "flex-col overflow-y-auto max-h-60" : ""}`}>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
     
   
@@ -419,6 +421,7 @@ const Tabs = ({ isOpen }) => {
       </button>
     </div>
       </div>
+      </div> 
     );
   };
   
@@ -434,7 +437,7 @@ const Tabs = ({ isOpen }) => {
   
   return (
     <div>
-      <div className={isMobile ? "flex flex-col gap-4" : "flex gap-4"}>
+      <div className={`flex gap-4 ${isMobile ? "flex-col overflow-y-auto max-h-60" : ""}`}>
         <div>
           <h3 className="mb-2 text-sm text-[#361d32] font-medium">По Україні</h3>
           <a href="#" className="block text-sm text-[#543c52]">Київ</a>

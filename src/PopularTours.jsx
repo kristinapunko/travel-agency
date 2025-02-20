@@ -40,12 +40,16 @@ const DestinationGrid = () => {
 const Destination = ({ name, image }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const isMobile = window.innerWidth < 768;
+
   return (
     <div
-      className="relative w-full h-full aspect-[4/3] overflow-hidden cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    className={`relative w-full h-full aspect-[4/3] overflow-hidden cursor-pointer ${
+      isHovered || isMobile ? "opacity-100" : "opacity-0"
+    } md:opacity-100`}
+    onMouseEnter={() => !isMobile && setIsHovered(true)}
+    onMouseLeave={() => !isMobile && setIsHovered(false)}
+  >
       <img
         src={image}
         alt={name}

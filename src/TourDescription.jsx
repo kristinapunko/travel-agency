@@ -28,20 +28,20 @@ export default function TourDetails() {
   return (
     <>
     <Header/>
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-[#361d32] text-center mb-4">Dreams Vacation Club, 5★</h1>
+    <div className="container mx-auto p-2 md:p-4">
+      <h1 className="text-2xl md:text-3xl font-bold text-[#361d32] text-center mb-2 md:mb-4">Dreams Vacation Club, 5★</h1>
       <p className="text-center text-[#543c52]">Єгипет, Шарм-ель-Шейх</p>
-      <div className="lg:flex lg:justify-between my-auto p-4">
+      <div className="lg:flex lg:justify-between my-auto p-2 md:p-4">
   <div className="lg:w-2/3 w-full flex flex-col items-center">
     <Swiper
       navigation
       modules={[Navigation, Thumbs]}
       thumbs={{ swiper: thumbsSwiper }}
-      className="w-full my-6 rounded-2xl overflow-hidden"
+      className="w-full h-auto my-4 sm:my-6 rounded-2xl overflow-hidden"
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <img src={bali} alt="Tour image" className="w-full h-64 md:h-80 object-cover" />
+          <img src={bali} alt="Tour image" className="w-full h-48 sm:h-64 md:h-80 object-cover" />
         </SwiperSlide>
       ))}
     </Swiper>
@@ -112,18 +112,18 @@ export default function TourDetails() {
         </div>
     </div>
       </div>
-    <h2 className="text-2xl text-center text-[#361d32] font-semibold mb-4">Інформація про тур</h2>
+    <h2 className="text-xl sm:text-2xl text-center text-[#361d32] font-semibold mb-4">Інформація про тур</h2>
     
       
-    <p className='text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Дати туру:<MdCalendarMonth/></span> 19.02 - 26.02</p>
-    <p className='text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Тривалість: <MdOutlineAccessTime/></span> 7 ночей в Dbl (Studio)</p>
-    <p className='text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Харчування: <MdAllInclusive/></span> Все включено</p>
-    <p className='text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Туристи: <MdPeopleAlt/></span> 2 дорослих</p>
-    <p className='text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Переліт: <MdFlight/></span> Включено</p>
-    <p className='text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Виліт: <MdOutlineFlightTakeoff/></span> 19 лютого, Кишинів</p>
-    <p className='text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Повернення: <MdOutlineFlightLand/></span> 26 лютого, Шарм-ель-Шейх</p>
+    <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Дати туру:<MdCalendarMonth/></span> 19.02 - 26.02</p>
+    <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Тривалість: <MdOutlineAccessTime/></span> 7 ночей в Dbl (Studio)</p>
+    <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Харчування: <MdAllInclusive/></span> Все включено</p>
+    <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Туристи: <MdPeopleAlt/></span> 2 дорослих</p>
+    <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Переліт: <MdFlight/></span> Включено</p>
+    <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Виліт: <MdOutlineFlightTakeoff/></span> 19 лютого, Кишинів</p>
+    <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Повернення: <MdOutlineFlightLand/></span> 26 лютого, Шарм-ель-Шейх</p>
     
-    <h3 className="text-2xl mb-8 font-bold text-[#f55951] mt-4">45 647 грн</h3>
+    <h3 className="text-xl sm:text-2xl mb-8 font-bold text-[#f55951] mt-4">45 647 грн</h3>
     <button
       className="flex justify-center items-center text-center w-full mt-8 bg-[#543c52] hover:bg-[#361d32] text-[#edd2cb] py-2 rounded-2xl"
       onClick={() => setShowForm(true)}
@@ -135,12 +135,12 @@ export default function TourDetails() {
   </div>
 </div>
 
-      <div className="mt-6 p-6 rounded-lg">
-        <h3 className="text-3xl font-semibold text-[#543c52] mb-8">Що входить в тур</h3>
+      <div className="mt-4 p-4 sm:mt-6 sm:p-6 rounded-lg">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-[#543c52] mb-4 sm:mb-8">Що входить в тур</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 mt-2">
           
             <div className="flex items-center space-x-2 border border-[#361d32]/50 p-3 rounded-lg shadow-xl">
-              <span className="text-xl"><FaWifi /></span>
+              <span className="text-lg sm:text-xl"><FaWifi /></span>
               <span>Безкоштовний Wi-Fi</span>
             </div>
 
@@ -160,11 +160,11 @@ export default function TourDetails() {
             </div>
         </div>
       </div>
-      <div className="mt-6 p-6 rounded-lg  shadow-xl">
-        <h3 className="text-3xl font-semibold text-[#543c52] mb-2">Програма туру</h3>
-        <h2 className='text-md font-semibold text-[#543c52] mb-4'>Тур на 7 днів без нічних переїздів. 5 оглядових екскурсій по основим містам уже у вартості туру: Зальцбург, Цюрих, Берн, Кольмар, Прага</h2>
+      <div className="mt-4 p-4 sm:mt-6 sm:p-6 rounded-lg  shadow-xl">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-[#543c52] mb-2">Програма туру</h3>
+        <h2 className='text-sm sm:text-md font-semibold text-[#543c52] mb-4'>Тур на 7 днів без нічних переїздів. 5 оглядових екскурсій по основим містам уже у вартості туру: Зальцбург, Цюрих, Берн, Кольмар, Прага</h2>
         <h2 className='text-md font-semibold text-[#543c52] mb-4 underline'>1 день</h2>
-          <div className='text-[#543c52] mb-8 ml-3'>
+          <div className='text-[#543c52] mb-4 sm:mb-8 ml-3'>
             <p>07:00 - збір групи на ж/д вокзалі м. Львів</p>
             <p>07:30 - виїзд групи.</p>
             <p>Перетин кордону.</p>
@@ -186,13 +186,13 @@ export default function TourDetails() {
             <p>Ніч в готелі.</p>
           </div>
       </div>
-      <div className="mt-6 p-6 rounded-lg  shadow-xl">
-        <h3 className="text-3xl font-semibold text-[#543c52] my-6">Відгуки</h3>
+      <div className="mt-4 p-4 sm:mt-6 sm:p-6 rounded-lg  shadow-xl">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-[#543c52] mb-4 sm:mb-8">Відгуки</h3>
       
-      <div className="p-5 shadow-md bg-white rounded-lg text-left border border-[#543c52]/50 mb-4">
+      <div className="p-4 sm:p-5 shadow-md bg-white rounded-lg text-left border border-[#543c52]/50 mb-4">
         <div>
           <div className='flex justify-between mb-1'>
-            <p className="text-lg font-semibold text-[#361d32]">Марія</p>
+            <p className="text-md sm:text-lg font-semibold text-[#361d32]">Марія</p>
             <div className="flex gap-1 mt-1">
             <FaStar size={16} className="text-[#f55951]" />
             <FaStar size={16} className="text-[#f55951]" />
@@ -202,11 +202,11 @@ export default function TourDetails() {
             </div>
           </div>
           <p className="text-[#543c52] text-xs">12 грудня 2023, 10:45</p>
-          <p className="text-[#543c52] mt-4">Все пройшло гладко, рекомендую!</p>
+          <p className="text-[#543c52] mt-2 sm:mt-4">Все пройшло гладко, рекомендую!</p>
         </div>
       </div>
       
-      <div className="mt-6 text-left bg-white p-5 rounded-lg shadow-md">
+      <div className="mt-4 sm:mt-6 text-left bg-white p-3 sm:p-5 rounded-lg shadow-md">
         <h3 className="text-lg font-semibold text-[#543c52] mb-2">Додати відгук</h3>
         <input
           className="w-full p-2 border-b-2 border-[#543c52]/50 focus:outline-none  rounded-md"

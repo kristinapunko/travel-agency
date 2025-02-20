@@ -68,7 +68,7 @@ const Home = () => (
   
 const Name = (props) =>(
   <div class="flex justify-center items-center">
-    <h1 className='capitalize text-[#361d32] text-md my-4 lg:my-10 lg:text-3xl'>
+    <h1 className='capitalize text-[#361d32] text-xl my-4 lg:my-10 lg:text-3xl'>
         <span className='font-semibold'>{props.main}</span> {props.other}
     </h1>
 </div>
