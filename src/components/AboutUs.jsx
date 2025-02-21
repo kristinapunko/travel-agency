@@ -3,7 +3,7 @@ import { FaPlaneDeparture, FaDatabase } from "react-icons/fa";
 import { IoIosPricetags } from "react-icons/io";
 import { IoStatsChartSharp, IoTicket} from "react-icons/io5";
 import { MdOutlineRateReview } from "react-icons/md";
-import advantages_bg from './assets/advantages_bg-1.jpg';
+import advantages_bg from '../assets/advantages_bg-1.jpg';
 
 const GridComponent = () => {
   return (

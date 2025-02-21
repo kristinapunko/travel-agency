@@ -1,47 +1,73 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
-import Slides from './Slides'
-import Header from './Header'
-import Filters from './Filters'
-import ImageGrid from './ImageSlider'
-import TourList from './TourCard'
-import GridComponent from './AboutUs'
-import Footer from './Footer'
-import DestinationGrid from './PopularTours'
-import Login from './Login'
-import Register from './Register'
-import { Route, Routes, Router } from 'react-router-dom'
-import TourDescription from './TourDescription'
-import TourL from './ThematicTours'
-import AllTours from './AllTours'
+import Slides from './components/ui/Slides'
+import TourList from './components/TourList'
+import GridComponent from './components/AboutUs'
+import DestinationGrid from './components/PopularTours'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import TourDescription from './pages/TourDescription'
+import Error from './components/Error'
+import TourL from './components/ThematicTours'
+import AllTours from './pages/AllTours'
+import Сabinet from './pages/Сabinet'
+import RootLayout from './layout/RootLayout'
+import NotFound from './components/NotFound'
+import {Routes, Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom'
+import CabinetLayout from './layout/CabinetLayout'
+import Cabinet from './pages/Сabinet'
+import Booking from './pages/Booking'
+import Filters from './components/Filters'
+import { useDispatch, useSelector } from 'react-redux';
+import { checkLoggedInUser } from './features/authentication/logoutSlice'
+import ImageGrid from './components/ImageSlider'
+import AgencyReviews from './pages/AgencyReviews'
+import AboutusPage from './pages/AboutusPage'
 
 function App() {
-    const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(checkLoggedInUser()); 
+  }, [dispatch]);
+  
+    const router = createBrowserRouter(
+      createRoutesFromElements(
+         <>
+         <Route element={<RootLayout />}>
+           <Route index element={<Home />} />
+           <Route path="tour/:id" element={<TourDescription />} errorElement={<Error />} />
+           <Route path="alltours" element={<AllTours />} />
+           <Route path="reviews" element={<AgencyReviews />} />
+           <Route path="aboutus" element={<AboutusPage />} />
+           <Route path="cabinet" element={<CabinetLayout />}>
+              <Route index element={<Cabinet />} />
+              <Route path="likedTours" element={<Cabinet />} />
+              <Route path="booking" element={<Booking/>} />
+            </Route>
+         </Route>
+            <Route path="login" element={<AuthLayout><Login /></AuthLayout>} />
+         <Route path="register" element={<AuthLayout><Register /></AuthLayout>} />
+         <Route path="*" element={<NotFound />} />
+       </>
+      )
+    )
 
     return (
-        <>
-<Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
-      <Route path="/register" element={<AuthLayout><Register /></AuthLayout>} />
-      <Route path='/tour' element={<TourDescription/>}/>
-      <Route path='alltours/tour' element={<TourDescription/>}/>
-      <Route path='/alltours' element={<AllTours/>}/>
-    </Routes>
-        </>
+      <RouterProvider router={router}/>
     )
 }
 
-const Home = () => (
-  <>
+const Home = () => {
+  const { tours } = useSelector((state) => state.tours);
+  return <>
 
       <Slides className='-z-10'/>
-      <Filters />
+      <Filters/>
       <Name main="Знайди свою найкращу" other="країну" />
       <ImageGrid />
       <Name main="Усі тури" other=""/>
-      <TourList />
+      <TourList tours={tours}/>
       <Name main="Чому ми" other=""/>
       <GridComponent />
       <Name main="Найпопулярніші напрямки" other="турів"/>
@@ -50,7 +76,7 @@ const Home = () => (
       <TourL/>
 
   </>
-);
+};
   
 const Name = (props) =>(
   <div class="flex justify-center items-center">

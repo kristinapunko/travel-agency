@@ -1,17 +1,16 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import kyiv from './assets/kyiv.jpg';
-import lakePragsItaly from './assets/lakePragsItaly.jpg';
-import london from './assets/london.jpg';
-import newYorkCity from './assets/newYorkCity.jpg';
-import norway from './assets/norway.jpg';
-import paris from './assets/paris.jpg';
-import japan from './assets/japan.jpg';
-import greece from './assets/greece.jpg';
-import bali from './assets/bali.jpg';
-import './App.css'
+import kyiv from '../../assets/kyiv.jpg';
+import lakePragsItaly from '../../assets/lakePragsItaly.jpg';
+import london from '../../assets/london.jpg';
+import newYorkCity from '../../assets/newYorkCity.jpg';
+import norway from '../../assets/norway.jpg';
+import paris from '../../assets/paris.jpg';
+import japan from '../../assets/japan.jpg';
+import greece from '../../assets/greece.jpg';
+import bali from '../../assets/bali.jpg';
+import '../../App.css'
 
-// Імпорт стилів
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
