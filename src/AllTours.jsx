@@ -1,6 +1,4 @@
-import Header from './Header';
 import Filters from './Filters'
-import Footer from './Footer';
 import { FaHeart, FaCalendarAlt, FaPlaneDeparture, FaUtensils,FaFireAlt,FaStar } from "react-icons/fa";
 import img13 from './assets/13.jpg';
 import { Link } from "react-router-dom";
@@ -8,7 +6,6 @@ import { Link } from "react-router-dom";
 const AllTours = () => {
     return (
         <>
-            <Header/>
             <Filters/>
             <div className="container mx-auto px-4 py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -242,7 +239,6 @@ const AllTours = () => {
 
       </div>
     </div>
-            <Footer/>
         </>
     )
 }
