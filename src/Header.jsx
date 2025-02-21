@@ -1,18 +1,9 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import './App.css'
-import {
-  FiArrowRight,
-  FiBarChart2,
-  FiChevronDown,
-  FiHome,
-  FiPieChart,
-} from "react-icons/fi";
+import {FiArrowRight, FiChevronDown} from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
-import { useScroll } from "motion/react"
 import logo from './assets/Logo .png'
 import {Link} from "react-router-dom";
-
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);

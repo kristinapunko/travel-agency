@@ -13,7 +13,6 @@ import Login from './Login'
 import Register from './Register'
 import { Route, Routes, Router } from 'react-router-dom'
 import TourDescription from './TourDescription'
-import Application from './Application'
 import TourL from './ThematicTours'
 import AllTours from './AllTours'
 
@@ -28,28 +27,15 @@ function App() {
       <Route path="/register" element={<AuthLayout><Register /></AuthLayout>} />
       <Route path='/tour' element={<TourDescription/>}/>
       <Route path='alltours/tour' element={<TourDescription/>}/>
-      <Route path="/application" element={<AuthLayout><Application /></AuthLayout>} />
       <Route path='/alltours' element={<AllTours/>}/>
     </Routes>
-          {/* <Header/>
-          <Slides className='-z-10'/>
-          <Filters/>
-          <Name main="Знайди свою найкращу" other="країну" />
-          <ImageGrid/>
-          <Name main="Усі тури" other=""/>
-          <TourList/>
-          <Name main="Чому ми" other=""/>
-          <GridComponent/>
-          <Name main="Найпопулярніші напрямки" other="турів"/>
-          <DestinationList/>
-          <Footer/> */}
         </>
     )
 }
 
 const Home = () => (
   <>
-      <Header />
+
       <Slides className='-z-10'/>
       <Filters />
       <Name main="Знайди свою найкращу" other="країну" />
@@ -62,7 +48,7 @@ const Home = () => (
       <DestinationGrid />
       <Name main="Тематичні" other="тури"/>
       <TourL/>
-      <Footer />
+
   </>
 );
   

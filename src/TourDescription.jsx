@@ -6,8 +6,7 @@ import { Navigation, Thumbs } from 'swiper/modules';
 import { useState,  } from 'react';
 import bali from './assets/bali.jpg';
 import { FaWifi, FaDog, FaSnowflake, FaBath, FaTv, FaRestroom, FaKitchenSet } from 'react-icons/fa6';
-import Header from './Header';
-import Footer from './Footer';
+
 import { MdCalendarMonth, MdOutlineAccessTime, MdAllInclusive, MdPeopleAlt, MdOutlineFlightTakeoff, MdFlight, MdOutlineFlightLand, MdOutlineEmail } from "react-icons/md";
 import { FaHeart,FaFireAlt } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
@@ -27,7 +26,6 @@ export default function TourDetails() {
 
   return (
     <>
-    <Header/>
     <div className="container mx-auto p-2 md:p-4">
       <h1 className="text-2xl md:text-3xl font-bold text-[#361d32] text-center mb-2 md:mb-4">Dreams Vacation Club, 5★</h1>
       <p className="text-center text-[#543c52]">Єгипет, Шарм-ель-Шейх</p>
@@ -244,8 +242,6 @@ export default function TourDetails() {
       </div>
     </div>
     </div>
-    
-    <Footer/>
     </>
   );
 }

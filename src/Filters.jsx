@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FaGlobe, FaPlaneDeparture, FaCalendarAlt, FaUser } from "react-icons/fa";
 import arrowIcon from "./assets/2.png";
 import { registerLocale } from "react-datepicker";
-import uk from "date-fns/locale/uk"; // Правильний імпорт
+import uk from "date-fns/locale/uk"; 
 
 registerLocale("uk", uk); 
 import './App.css'
@@ -131,38 +131,13 @@ const Filters = () => {
               locale="uk" 
               placeholderText="Оберіть дату "
               value={formattedDate }
-              //customInput={formattedDate}
               className="bg-white text-[#543c52] w-full cursor-pointer"
               calendarClassName="custom-datepicker"
-              //open={calendarOpen}
-              //onClickOutside={() => setCalendarOpen(false)}
             />
             
     </div>
   </div>
 </div>
-
-         
-  {/* <div className="bg-white absolute left-0 mt-2 w-full  bg-white shadow-lg rounded-lg z-10 p-4">
-<DatePicker
-  selected={startDate}
-  onChange={(dates) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
-  }}
-  startDate={startDate}
-  endDate={endDate}
-  selectsRange
-  monthsShown={2}
-  placeholderText="Виберіть діапазон дат"
-  className="border p-4 w-full mx-auto rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#543c52] focus:border-transparent bg-white text-[#543c52]"
-  calendarClassName="custom-datepicker"
-/>
-
-
-  </div> */}
-
         <div className="relative w-full">
           <div 
             className="flex items-center gap-3 p-2 lg:p-4 bg-white shadow-md rounded-lg cursor-pointer" 

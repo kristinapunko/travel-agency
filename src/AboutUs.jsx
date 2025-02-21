@@ -9,7 +9,6 @@ const GridComponent = () => {
   return (
     <>
       <div className="relative w-[90vw] xl:w-[80vw] mx-auto">
-        {/* <img className="absolute inset-0 w-full h-full rounded-xl object-cover z-0" src={advantages_bg} alt="Kyiv" /> */}
 
         <div className="relative z-10 bg-[#f1e8e6]/50 p-6 rounded-xl shadow-lg flex justify-around">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
