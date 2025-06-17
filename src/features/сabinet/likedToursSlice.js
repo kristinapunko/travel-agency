@@ -8,7 +8,10 @@ export const fetchLikedTours = createAsyncThunk(
       return rejectWithValue('No token found');
     }
 
-    const response = await fetch('http://127.0.0.1:8000/cabinet/liked-tours/', {
+    // const response = await fetch('http://127.0.0.1:8000/cabinet/liked-tours/', {
+    //   headers: { Authorization: `Bearer ${token}` },
+    // });
+    const response = await fetch('https://my-django-project-7203.onrender.com/cabinet/liked-tours/', {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -29,7 +32,16 @@ export const toggleLike = createAsyncThunk(
       return rejectWithValue('No token found');
     }
 
-    const response = await fetch('http://localhost:8000/cabinet/toggle-like/', {
+    // const response = await fetch('http://localhost:8000/cabinet/toggle-like/', {
+    //   method: 'POST',
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ tour: tourId }),
+    // });
+
+    const response = await fetch('https://my-django-project-7203.onrender.com/cabinet/toggle-like/', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,

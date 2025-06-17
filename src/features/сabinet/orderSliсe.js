@@ -16,8 +16,13 @@ export const sendOrderRequest = createAsyncThunk(
             if (!token) throw new Error('No token found');
             if (!tourId) throw new Error('Tour ID is missing');
 
+            // const response = await axios.post(
+            //     'http://127.0.0.1:8000/cabinet/orders/',
+            //     { user: userId, tour: tourId },
+            //     { headers: { Authorization: `Bearer ${token}` } }
+            // );
             const response = await axios.post(
-                'http://127.0.0.1:8000/cabinet/orders/',
+                'https://my-django-project-7203.onrender.com/cabinet/orders/',
                 { user: userId, tour: tourId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -35,8 +40,12 @@ export const fetchOrders = createAsyncThunk(
             const token = localStorage.getItem('accessToken');
             if (!token) throw new Error('No token found');
 
+            // const response = await axios.get(
+            //     'http://127.0.0.1:8000/cabinet/orders/',
+            //     { headers: { Authorization: `Bearer ${token}` } }
+            // );
             const response = await axios.get(
-                'http://127.0.0.1:8000/cabinet/orders/',
+                'https://my-django-project-7203.onrender.com/cabinet/orders/',
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             return response.data;

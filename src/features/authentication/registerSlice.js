@@ -10,7 +10,9 @@ export const registerUser = createAsyncThunk(
   'register/registerUser',
   async (formData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register/", formData);
+      const response = await axios.post("https://my-django-project-7203.onrender.com/api/register/", formData);
+      // const response = await axios.post("http://127.0.0.1:8000/api/register/", formData);
+
       return response.data;
     } catch (error) {
       if (error.response && error.response.data) {
