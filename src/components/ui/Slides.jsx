@@ -1,14 +1,14 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import kyiv from '../../assets/kyiv.jpg';
-import lakePragsItaly from '../../assets/lakePragsItaly.jpg';
+import kyiv from '../../assets/Kyiv.jpg';
+import lakePragsItaly from '../../assets/LakePragsItaly.jpg';
 import london from '../../assets/london.jpg';
-import newYorkCity from '../../assets/newYorkCity.jpg';
-import norway from '../../assets/norway.jpg';
+import newYorkCity from '../../assets/NewYorkCity.jpg';
+import norway from '../../assets/Norway.jpg';
 import paris from '../../assets/paris.jpg';
-import japan from '../../assets/japan.jpg';
-import greece from '../../assets/greece.jpg';
-import bali from '../../assets/bali.jpg';
+import japan from '../../assets/Japan.jpg';
+import greece from '../../assets/Greece.jpg';
+import bali from '../../assets/Bali.jpg';
 import '../../App.css'
 
 import 'swiper/css';
