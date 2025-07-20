@@ -10,8 +10,8 @@ export const loginUser = createAsyncThunk(
     'login/loginUser',
     async (formData, { rejectWithValue }) => {
         try {
-            const response = await axios.post("https://my-django-project-7203.onrender.com/api/login/", formData);
-            // const response = await axios.post("http://127.0.0.1:8000/api/login/", formData);
+            // const response = await axios.post("https://my-django-project-7203.onrender.com/api/login/", formData);
+            const response = await axios.post("http://127.0.0.1:8000/api/login/", formData);
             console.log("success", response.data);
 
             localStorage.setItem("accessToken", response.data.token.access);

@@ -95,7 +95,6 @@ const Filters = () => {
         : "")
     : "Оберіть дату";
 
-  // Універсальний компонент Dropdown
   const Dropdown = ({ id, icon, label, value, options, onChange }) => (
     <div className="relative w-full">
       <div
@@ -132,7 +131,6 @@ const Filters = () => {
             type="text"
             name="searchQuery"
             placeholder="Пошук..."
-            // value={filters.searchQuery || ""}
             value={searchInput}
             onChange={handleSearchChange}
             className="w-full text-[#543c52] px-2 py-1 lg:px-4 lg:py-2 rounded-full ring-2 ring-white focus:outline-none focus:ring-2 focus:ring-[#543c52]"

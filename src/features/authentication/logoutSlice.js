@@ -18,8 +18,8 @@ export const checkLoggedInUser = createAsyncThunk('auth/checkLoggedInUser', asyn
                 "Authorization": `Bearer ${token}`
             }
         };
-        // const response = await axios.get("http://127.0.0.1:8000/api/user/", config);
-        const response = await axios.get("https://my-django-project-7203.onrender.com/api/user/", config);
+        const response = await axios.get("http://127.0.0.1:8000/api/user/", config);
+        // const response = await axios.get("https://my-django-project-7203.onrender.com/api/user/", config);
         return response.data; 
     } catch (error) {
         return rejectWithValue(error.response?.data || error.message);

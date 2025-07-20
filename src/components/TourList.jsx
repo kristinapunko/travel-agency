@@ -6,6 +6,7 @@ import TourCard from './ui/TourCard';
 import { fetchLikedTours, toggleLike, selectLikedTourIds } from '../features/сabinet/likedToursSlice';
 import { useLocation } from 'react-router-dom';
 import { fetchReviews } from '../features/tours/reviewsSlice';
+import Loading from './ui/Loading';
 
 const TourList = ({ tours }) => {
   const [more, setMore] = useState(false);
@@ -119,7 +120,7 @@ const TourList = ({ tours }) => {
       );
     }
     
-
+    if (detailsLoading) return <Loading/>
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -131,10 +132,8 @@ const TourList = ({ tours }) => {
               tour={tour}
               details={tour.details}
               reviews={reviews}
-              showLikeButton={true}
               onLikeClick={(e) => handleToggleLike(tour.id, e)}
               isLiked={isLiked}
-              isLoggedIn={isLoggedIn}
             />
           );
         })}

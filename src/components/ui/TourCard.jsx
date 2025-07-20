@@ -5,23 +5,27 @@ import FormattedPrice from './FormattedPrice';
 import LikeButton from './LikeButton';
 import HotAndPromotionButton from './HotAndPromotionButton';
 import { formatDate,calculateDaysAndNights } from '../../utils/utils';
-import CountOfPeaole from './CountOfPeaole';
+import CountOfPeople from './CountOfPeople';
+import { HiH1 } from 'react-icons/hi2';
 
 const TourCard = ({ 
   tour, 
   details, 
   reviews,
   onLikeClick,
-  isLiked = false,
-  isLoggedIn = false
+  isLiked = false
 }) => {
   const tourReviews = reviews.filter(review => review.tour === tour.id);
-    
+  const tourEndDate = new Date(tour.end_date);
+  const today = new Date();
+  const isActive = tourEndDate >= today;
+      
   return (
-    <div className="bg-[#f1e8e6]/20 border border-[#361d32]-200 rounded-2xl shadow-lg p-4 flex flex-col items-center relative">
+    <div className={` ${isActive ? "bg-[#f1e8e6]/20" : "bg-[#f1e8e6]/80"} border border-[#361d32]-200 rounded-2xl shadow-lg p-4 flex flex-col items-center relative`}>
+      {!isActive && <h1 className='absolute z-10 top-[80px] text-[#f1e8e6] font-bold text-[24px]'>Не активний</h1>}
       <Link to={`/tour/${tour.id}`} className="w-full">
         <div className="relative w-full overflow-hidden bg-black/50 rounded-2xl">
-          <div className="absolute inset-0 bg-black opacity-30"></div>
+          <div className={`absolute inset-0 bg-black ${isActive ? "opacity-30" : "opacity-50"} `}></div>
 
           {details?.photos?.length > 0 ? (
             <img
@@ -79,7 +83,7 @@ const TourCard = ({
           
           <div className="mt-3 px-2 w-full">
                     <div className="text-right mt-1"> 
-                      <CountOfPeaole tour={tour} />
+                      <CountOfPeople tour={tour} />
                     </div>
                     <div className="text-left text-2xl font-bold">
                       <FormattedPrice tour={tour}/>

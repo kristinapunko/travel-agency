@@ -13,12 +13,11 @@ import { fetchTourById } from '../features/tours/toursSlice';
 import {fetchTourDetailsById, fetchTourDetails} from '../features/tours/tourDetailsSlice'
 import { formatDate, calculateDaysAndNights, formatPrice } from '../utils/utils'
 import { useEffect } from 'react';
-import CountOfPeaole from '../components/ui/CountOfPeaole';
+import CountOfPeople from '../components/ui/CountOfPeople';
 import FormattedPrice from '../components/ui/FormattedPrice';
 import LikeButton from '../components/ui/LikeButton';
 import HotAndPromotionButton from '../components/ui/HotAndPromotionButton'
 import { sendBookingRequest } from '../features/сabinet/bookingSlice';
-import { sendOrderRequest } from '../features/сabinet/orderSliсe';
 
 export default function TourDetails() {
 
@@ -33,7 +32,10 @@ export default function TourDetails() {
   const likedTourIds = useSelector(selectLikedTourIds);
   const isLiked = likedTourIds.includes(tour.selectedTour?.id);
   const reviews = useSelector((state) => state.reviews.reviews);
- console.log(tour);
+
+  const tourEndDate = new Date(tour.selectedTour.end_date);
+  const today = new Date();
+  const isActive = tourEndDate > today;
  
  if (isNaN(Number(id))) {
   throw new Error('Invalid tour ID');
@@ -83,7 +85,12 @@ export default function TourDetails() {
 )}
 
 {!tour.loading && !tourDetailsId.loading && !tour.error && !tourDetailsId.error && tour.selectedTour && tourDetailsId.selectedTourDetails.tour && (
-
+  <div className="relative">
+  {!isActive && (
+    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center z-10">
+      <p className="text-white text-4xl font-bold">Тур завершено</p>
+    </div>
+  )}
   <div className="container mx-auto p-2 md:p-4">
     <h1 className="text-2xl md:text-3xl font-bold text-[#361d32] text-center mb-2 md:mb-4">{tour.selectedTour.name}</h1>
       <p className="text-center text-[#543c52]">{tour.selectedTour.countries} ({tour.selectedTour.cities})</p>
@@ -172,7 +179,7 @@ export default function TourDetails() {
     <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Дати туру:<MdCalendarMonth/></span>{formatDate(tour.selectedTour.start_date)} - {formatDate(tour.selectedTour.end_date)}</p>
     <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Тривалість: <MdOutlineAccessTime/></span> {calculateDaysAndNights(tour.selectedTour.start_date, tour.selectedTour.end_date)}</p>
     <p className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Харчування: <MdAllInclusive/></span> {tour.selectedTour.food}</p>
-    <div className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Туристи: <MdPeopleAlt/></span> <CountOfPeaole tour={tour.selectedTour}/></div>
+    <div className='text-sm sm:text-md text-[#543c52] flex gap-2'><span className='text-[#361d32] font-semibold flex items-center gap-2'>Туристи: <MdPeopleAlt/></span> <CountOfPeople tour={tour.selectedTour}/></div>
     <p className="text-sm sm:text-md text-[#543c52] flex gap-2">
       <span className="text-[#361d32] font-semibold flex items-center gap-2">
         {tour.selectedTour.departure_by === "Автобус" ? (
@@ -254,7 +261,7 @@ export default function TourDetails() {
         <h3 className="text-2xl sm:text-3xl font-semibold text-[#543c52] mb-4 sm:mb-8">Відгуки</h3>
       <Reviews tourId={id}/>
     </div>
-    </div> )}
+    </div></div> )}
     </>
   );
 }

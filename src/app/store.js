@@ -6,7 +6,6 @@ import loginSlice from "../features/authentication/loginSlice";
 import authReducer from "../features/authentication/logoutSlice";
 import likedToursSlice from "../features/сabinet/likedToursSlice";
 import bookingReducer from "../features/сabinet/bookingSlice";
-import orderReducer from "../features/сabinet/orderSliсe";
 import reviewsReducer from "../features/tours/reviewsSlice";
 import agencyReviewReducer from "../features/tours/agencyReviewSlice";
 
@@ -19,7 +18,6 @@ const store = configureStore({
        auth: authReducer,
        likedTours: likedToursSlice,
        booking:bookingReducer,
-       order:orderReducer,
        reviews: reviewsReducer,
        agencyReview: agencyReviewReducer,
     }
