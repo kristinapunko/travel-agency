@@ -18,8 +18,8 @@ export const checkLoggedInUser = createAsyncThunk('auth/checkLoggedInUser', asyn
                 "Authorization": `Bearer ${token}`
             }
         };
-        const response = await axios.get("http://127.0.0.1:8000/api/user/", config);
-        // const response = await axios.get("https://my-django-project-7203.onrender.com/api/user/", config);
+        // const response = await axios.get("http://127.0.0.1:8000/api/user/", config);
+        const response = await axios.get("https://my-django-project-7203.onrender.com/api/user/", config);
         return response.data; 
     } catch (error) {
         return rejectWithValue(error.response?.data || error.message);
@@ -37,7 +37,7 @@ export const logoutUser = createAsyncThunk('auth/logoutUser', async () => {
                     "Authorization": `Bearer ${accessToken}`
                 }
             };
-            await axios.post("http://127.0.0.1:8000/api/logout/", { "refresh": refreshToken }, config);
+            await axios.post("https://my-django-project-7203.onrender.com/api/logout/", { "refresh": refreshToken }, config);
             localStorage.removeItem("accessToken");
             localStorage.removeItem("refreshToken");
         }
