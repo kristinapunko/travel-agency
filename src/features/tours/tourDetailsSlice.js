@@ -23,8 +23,8 @@ export const fetchTourDetails = createAsyncThunk(
   'tourDetails/fetchTourDetails', 
   async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/tours/tour_details/?format=json');
-      // const response = await axios.get('https://my-django-project-7203.onrender.com/tours/tour_details/?format=json');
+      // const response = await axios.get('http://127.0.0.1:8000/tours/tour_details/?format=json');
+      const response = await axios.get('https://my-django-project-7203.onrender.com/tours/tour_details/?format=json');
       return response.data;
     } catch (error) {
       console.error("API Error:", error);
@@ -37,8 +37,8 @@ export const fetchTourDetailsById = createAsyncThunk(
   'tourDetails/fetchTourDetailsById',
   async (id) => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/tours/tour_details/${id}/?format=json`);
-      // const response = await axios.get(`https://my-django-project-7203.onrender.com/tours/tour_details/${id}/?format=json`);
+      // const response = await axios.get(`http://127.0.0.1:8000/tours/tour_details/${id}/?format=json`);
+      const response = await axios.get(`https://my-django-project-7203.onrender.com/tours/tour_details/${id}/?format=json`);
       return response.data;
     } catch (error) {
       console.error("API Error:", error);
