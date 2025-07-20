@@ -15,16 +15,16 @@ export const sendBookingRequest = createAsyncThunk(
             if (!token) throw new Error('No token found');
             if (!tourId) throw new Error('Tour ID is missing');
 
-            const response = await axios.post(
-                'http://127.0.0.1:8000/cabinet/bookings/',
-                { user: userId, tour: tourId },
-                { headers: { Authorization: `Bearer ${token}` } }
-            );
             // const response = await axios.post(
-            //     'https://my-django-project-7203.onrender.com/cabinet/bookings/',
+            //     'http://127.0.0.1:8000/cabinet/bookings/',
             //     { user: userId, tour: tourId },
             //     { headers: { Authorization: `Bearer ${token}` } }
             // );
+            const response = await axios.post(
+                'https://my-django-project-7203.onrender.com/cabinet/bookings/',
+                { user: userId, tour: tourId },
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.detail || error.message || 'Booking request failed');
@@ -39,14 +39,14 @@ export const fetchBookings = createAsyncThunk(
             const token = localStorage.getItem('accessToken');
             if (!token) throw new Error('No token found');
 
-            const response = await axios.get(
-                'http://127.0.0.1:8000/cabinet/bookings/',
-                { headers: { Authorization: `Bearer ${token}` } }
-            );
             // const response = await axios.get(
-            //     'https://my-django-project-7203.onrender.com/cabinet/bookings/',
+            //     'http://127.0.0.1:8000/cabinet/bookings/',
             //     { headers: { Authorization: `Bearer ${token}` } }
             // );
+            const response = await axios.get(
+                'https://my-django-project-7203.onrender.com/cabinet/bookings/',
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.detail || error.message || 'Failed to fetch bookings');
@@ -61,14 +61,14 @@ export const cancelBooking = createAsyncThunk(
             const token = localStorage.getItem('accessToken');
             if (!token) throw new Error('No token found');
 
-            const response = await axios.delete(
-                `http://127.0.0.1:8000/cabinet/bookings/${bookingId}/`,
-                { headers: { Authorization: `Bearer ${token}` } }
-            );
             // const response = await axios.delete(
-            //     `https://my-django-project-7203.onrender.com/cabinet/bookings/${bookingId}/`,
+            //     `http://127.0.0.1:8000/cabinet/bookings/${bookingId}/`,
             //     { headers: { Authorization: `Bearer ${token}` } }
             // );
+            const response = await axios.delete(
+                `https://my-django-project-7203.onrender.com/cabinet/bookings/${bookingId}/`,
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
             return { bookingId, message: response.data.message }; // Повертаємо ID для оновлення стану
         } catch (error) {
             return rejectWithValue(error.response?.data?.error || error.message || 'Failed to cancel booking');
